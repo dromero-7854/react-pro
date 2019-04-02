@@ -16,6 +16,7 @@ export {
   devtool,
   entry,
   extensions,
+  externals,
   modules,
   name,
   output,
