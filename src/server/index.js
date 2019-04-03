@@ -7,6 +7,9 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 import webpackHotServerMiddleware from 'webpack-hot-server-middleware';
 
+// API
+import api from './api';
+
 // webpack configuration
 import webpackConfig from '../../webpack.config';
 
@@ -17,6 +20,9 @@ const port = process.env.NODE_PORT || 3000;
 
 // public static
 app.use(express.static(path.join(__dirname, '../../public')));
+
+// api middleware
+app.use('/api', api);
 
 // hot module replacement
 app.use(webpackDevMiddleware(compiler));
